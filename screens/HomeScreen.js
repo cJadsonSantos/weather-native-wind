@@ -1,24 +1,31 @@
-import React from 'react'
-import {Image, TextInput, View} from "react-native";
+import React, {useState} from 'react'
+import {Image, SafeAreaView, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {StatusBar} from "expo-status-bar";
-import {SafeAreaProvider} from "react-native-safe-area-context";
 import {theme} from "../theme";
+import {MagnifyingGlassIcon} from "react-native-heroicons/outline";
 
 export const HomeScreen = () => {
-    return (
-        <View className="flex-1 relative bg-blue-500">
-            <StatusBar style="light"></StatusBar>
-            <Image blurRadius={70} source={require('../assets/images/bg.png')} className="absolute h-full w-full"/>
+    const [showSearch, toggleSearch] = useState(false)
+    return (<View className="flex-1 relative">
+        <StatusBar style="light"></StatusBar>
+        <Image blurRadius={70} source={require('../assets/images/bg.png')} className="absolute h-full w-full"/>
 
-            <SafeAreaProvider className="flex flex-1">
-                {/*search section*/}
-                <View style={{height: '7%'}} className="mx-4 relative z-50">
-                    <View className="flex-row justify-end items-center rounded-full"
-                          style={{backgroundColor: theme.bgWhite(0.2)}}>
-                        <TextInput placeholder='Search city' placeholderTextColor={'lightgray'}/>
-                    </View>
+        <SafeAreaView className="flex flex-1">
+            {/*search section*/}
+            <View style={{height: '7%'}} className="mx-4 relative z-50">
+                <View className="flex-row justify-end items-center rounded-full"
+                      style={{backgroundColor: showSearch ? theme.bgWhite(0.2) : 'transparent'}}>
+                    {showSearch ? (<TextInput placeholder='Search city' placeholderTextColor={'lightgray'}
+                                              className="pl-6 h-10 flex-1 text-base text-white"/>) : null}
+
+                    <TouchableOpacity
+                        onPress={() => toggleSearch(!showSearch)}
+                        style={{backgroundColor: theme.bgWhite(0.3)}}
+                        className='rounded-full p-3 m-1'>
+                        <MagnifyingGlassIcon size='25' color='white'></MagnifyingGlassIcon>
+                    </TouchableOpacity>
                 </View>
-            </SafeAreaProvider>
-        </View>
-    )
+            </View>
+        </SafeAreaView>
+    </View>)
 }
