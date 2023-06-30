@@ -109,10 +109,10 @@ export const HomeScreen = () => {
                                 showsHorizontalScrollIndicator={false}>
                         <View className='flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4'
                               style={{backgroundColor: theme.bgWhite(0.15)}}>
-                            <Image source={require('../assets/images/heavyrain.png')} className='h-11 w-11'/>
+                            <Image source={require('../assets/images/partlycloudy.png')} className='h-11 w-11'/>
                             <Text className='text-white'>Monday</Text>
                             <Text className='text-white text-xl font-semibold'>
-                                13º
+                                24º
                             </Text>
                         </View>
                         <View className='flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4'
@@ -120,31 +120,31 @@ export const HomeScreen = () => {
                             <Image source={require('../assets/images/heavyrain.png')} className='h-11 w-11'/>
                             <Text className='text-white'>Tuesday</Text>
                             <Text className='text-white text-xl font-semibold'>
-                                13º
+                                23º
                             </Text>
                         </View>
                         <View className='flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4'
                               style={{backgroundColor: theme.bgWhite(0.15)}}>
-                            <Image source={require('../assets/images/heavyrain.png')} className='h-11 w-11'/>
-                            <Text className='text-white'>Monday</Text>
+                            <Image source={require('../assets/images/sun.png')} className='h-11 w-11'/>
+                            <Text className='text-white'>Wednesday</Text>
                             <Text className='text-white text-xl font-semibold'>
-                                13º
+                                27º
                             </Text>
                         </View>
                         <View className='flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4'
                               style={{backgroundColor: theme.bgWhite(0.15)}}>
-                            <Image source={require('../assets/images/heavyrain.png')} className='h-11 w-11'/>
-                            <Text className='text-white'>Monday</Text>
+                            <Image source={require('../assets/images/moderaterain.png')} className='h-11 w-11'/>
+                            <Text className='text-white'>Thursday</Text>
                             <Text className='text-white text-xl font-semibold'>
-                                13º
+                                25º
                             </Text>
                         </View>
                         <View className='flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4'
                               style={{backgroundColor: theme.bgWhite(0.15)}}>
-                            <Image source={require('../assets/images/heavyrain.png')} className='h-11 w-11'/>
-                            <Text className='text-white'>Monday</Text>
+                            <Image source={require('../assets/images/mist.png')} className='h-11 w-11'/>
+                            <Text className='text-white'>Friday</Text>
                             <Text className='text-white text-xl font-semibold'>
-                                13º
+                                23º
                             </Text>
                         </View>
                     </ScrollView>
