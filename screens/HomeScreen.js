@@ -20,7 +20,7 @@ export const HomeScreen = () => {
         setLocations([]);
         toggleSearch(false)
         setLoading(true)
-        storeData('city', loc.name)
+        storeData('city', loc.name).then(response => console.log(response))
         fetchWeatherForecast({
             cityName: loc.name, days: '7'
         }).then(data => {
@@ -38,7 +38,7 @@ export const HomeScreen = () => {
     }
 
     useEffect(() => {
-        fetchMyWeatherData();
+        fetchMyWeatherData().then(response => console.log(response));
     }, []);
 
     const fetchMyWeatherData = async () => {
@@ -109,7 +109,6 @@ export const HomeScreen = () => {
                     <Image
                         // source={{uri: 'https:' + current?.condition?.icon}}
                         source={weatherImages[current?.condition?.text]} className='w-52 h-52'
-                        className='w-52 h-52'
                     />
                 </View>
                 {/*degree celcius*/}
